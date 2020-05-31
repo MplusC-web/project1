@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAKA,AAAA,IAAI,CAAC;EACH,gBAAgB,EALc,KAAK;CAMpC",
+    "sources": [
+        "../vendor/leafo/scssphp/tests/inputs/if_on_null.scss"
+    ],
+    "names": [],
+    "file": "if_on_null.css"
+}
