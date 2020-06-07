@@ -30,7 +30,7 @@ class PostsController extends Controller
     {
         $posts = Post::orderBy('created_at', 'desc')->paginate(10);
 
-        return view('posts.index',compact('posts'));
+        return view('posts.index', compact('posts'));
     }
 
     public function sideindex(int $id)
@@ -57,29 +57,28 @@ class PostsController extends Controller
         $rules = [
             'title' => 'required',
             'category_id' => 'required',
-            'description'=>'required',
+            'body' => 'required',
             'pic1' => 'required',
         ];
 
         $messages = array(
             'title.required' => '商品名を入力してください。',
             'category_id.required' => 'カテゴリーを選択してください。',
-            'description.required' => '商品説明を入力してください。',
+            'body.required' => '商品説明を入力してください。',
             'pic1.required' => '写真を選択してください。',
 
         );
 
         $validator = Validator::make($request->all(), $rules, $messages);
 
-        if ($validator->fails())
-        {
+        if ($validator->fails()) {
             return redirect('/posts/create')->withErrors($validator->errors())->withInput();
         }
 
         $post->user_id = Auth::user()->id;
         $post->title = $request->title;
         $post->category_id = $request->category_id;
-        $post->description = $request->description;
+        $post->body = $request->body;
         $post->save();
         $request->pic1->storeAs('public/post_images', $post->id . '.jpg');
 
@@ -91,10 +90,10 @@ class PostsController extends Controller
     {
         $post = Post::find($post_id);
         $comments = Comment::with(['user'])
-        ->where('comments.post_id', $post_id)
-        ->get();
+            ->where('comments.post_id', $post_id)
+            ->get();
 
-        return view('posts.detail',['post' => $post, 'comments' => $comments]);
+        return view('posts.detail', ['post' => $post, 'comments' => $comments]);
     }
 
     public function edit(Post $post)
@@ -151,5 +150,4 @@ class PostsController extends Controller
             'id' => $post->id,
         ];
     }
-
 }

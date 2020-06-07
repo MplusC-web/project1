@@ -36,7 +36,7 @@
           <div class="row px-3 py-2">
           <h4 class="card-title">{{ $post->title }}</h4>
             <p class="card-text">
-            {{ \Illuminate\Support\Str::limit($post->description, 90) }}
+            {{ \Illuminate\Support\Str::limit($post->body, 90) }}
             </p>
           </div>
             <div class="row card-footer">

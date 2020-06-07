@@ -34,7 +34,7 @@
       <div class="row px-4 py-2">
         <h4 class="card-title">{{ $post->title }}詳細</h4>
         <p class="card-text">
-          {{ $post->description }}
+          {{ $post->body }}
         </p>
         <div class="col-9 col-md-9 col-lg-9">
           <span class="mr-2">

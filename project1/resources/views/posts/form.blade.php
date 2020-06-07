@@ -13,8 +13,8 @@
   </select>
 </div>
 <div class="form-group">
-  <label for="description">商品説明</label><br>
-  <textarea class="form-control" placeholder="300文字以内" type="text" name="description" rows="4">{{ $post->description ?? old('description') }}</textarea>
+  <label for="body">商品説明</label><br>
+  <textarea class="form-control" placeholder="300文字以内" type="text" name="body" rows="4">{{ $post->body ?? old('body') }}</textarea>
 </div>
 <div class="form-group">
 <label for="post_pic1">投稿写真</label><br>
