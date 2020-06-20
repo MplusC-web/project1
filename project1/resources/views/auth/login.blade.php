@@ -16,10 +16,6 @@
         <h3>＼ログイン／</h3>
         <p class="text-secondary">人気の100均グッズをチェックしよう</p>
       </div>
-      <div class="form-group">
-      <a href="{{ route('login.twitter') }}" class="btn btn-block btn-info">
-        <i class="fab fa-twitter mr-1"></i>Twitterでログイン</a>
-      </div>
       @include('error_card_list')
 
       <form class="new_user" id="new_user" action="{{ route('login') }}" accept-charset="UTF-8" method="post">

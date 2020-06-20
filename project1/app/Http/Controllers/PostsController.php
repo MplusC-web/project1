@@ -57,14 +57,14 @@ class PostsController extends Controller
         $rules = [
             'title' => 'required',
             'category_id' => 'required',
-            'body' => 'required',
+            'description' => 'required',
             'pic1' => 'required',
         ];
 
         $messages = array(
             'title.required' => '商品名を入力してください。',
             'category_id.required' => 'カテゴリーを選択してください。',
-            'body.required' => '商品説明を入力してください。',
+            'description.required' => '商品説明を入力してください。',
             'pic1.required' => '写真を選択してください。',
 
         );
@@ -75,10 +75,10 @@ class PostsController extends Controller
             return redirect('/posts/create')->withErrors($validator->errors())->withInput();
         }
 
-        $post->user_id = Auth::user()->id;
+        $post->user_id = auth()->id();
         $post->title = $request->title;
         $post->category_id = $request->category_id;
-        $post->body = $request->body;
+        $post->description = $request->description;
         $post->save();
         $request->pic1->storeAs('public/post_images', $post->id . '.jpg');
 

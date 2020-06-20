@@ -40,10 +40,7 @@
       <p class="devise-link">
         アカウントをお持ちですか？
         <a href="/users/sign_in">サインインする</a>
-        <div class="form-group">
-        <a href="{{ route('login.twitter') }}" class="btn btn-block btn-info">
-        <i class="fab fa-twitter mr-1"></i>Twitterでログイン</a>
-        </div>
+
       </p>
     </div>
   </div>
