@@ -39,18 +39,18 @@
             {{ \Illuminate\Support\Str::limit($post->description, 90) }}
             </p>
           </div>
-            <div class="row card-footer">
-              <div class="col-4 col-md-4 col-lg-4">
-                <span class="mr-2">
-                  <div class="light-color post-time no-text-decoration">{{ $post->created_at->format('Y.m.d') }}</div>
-                </span>
-              </div>
-              <div class="col-8 col-md-8 col-lg-8 clearfix">
-                <div class="float-right">
-                  <a class="btn btn-primary" href="/posts/{{ $post->id }}">tere詳細を見る</a>
-                </div>
+          <div class="row card-footer">
+            <div class="col-4 col-md-4 col-lg-4">
+              <span class="mr-2">
+              <div class="light-color post-time no-text-decoration">{{ $post->created_at->format('Y.m.d') }}</div>
+              </span>
+            </div>
+            <div class="col-8 col-md-8 col-lg-8 clearfix">
+              <div class="float-right">
+                <a class="btn btn-primary" href="/posts/{{ $post->id }}">tS詳細を見る</a>
               </div>
             </div>
+          </div>
         </div>
       </div>
     </div>
