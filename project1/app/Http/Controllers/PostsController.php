@@ -113,7 +113,7 @@ class PostsController extends Controller
         $post->delete();
         $user = User::find(1);
 
-        return redirect()->route('user.show', ['user_id' => $user]);
+        return redirect()->route('posts.index');
     }
 
     public function show(Post $post)

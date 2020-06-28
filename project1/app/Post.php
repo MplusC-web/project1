@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    protected $fillable = ['title','description'];
+    protected $fillable = ['title', 'description'];
 
-    Public function user()
+    public function user()
     {
         return $this->belongsTo('App\User');
     }
@@ -27,7 +27,7 @@ class Post extends Model
     public function isLikedBy(?User $user): bool
     {
         return $user
-            ? (bool)$this->likes->where('id', $user->id)->count()
+            ? (bool) $this->likes->where('id', $user->id)->count()
             : false;
     }
 
@@ -40,5 +40,4 @@ class Post extends Model
     {
         return $this->belongsToMany('App\User', 'comments')->withTimestamps();
     }
-
 }
