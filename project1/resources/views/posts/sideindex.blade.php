@@ -47,7 +47,7 @@
             </div>
             <div class="col-8 col-md-8 col-lg-8 clearfix">
               <div class="float-right">
-                <a class="btn btn-primary" href="/posts/{{ $post->id }}">tS詳細を見る</a>
+                <a class="btn btn-primary" href="/posts/{{ $post->id }}">詳細を見る</a>
               </div>
             </div>
           </div>
