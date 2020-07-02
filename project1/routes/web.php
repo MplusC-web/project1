@@ -28,6 +28,12 @@ Route::prefix('posts')->name('posts.')->group(function () {
     Route::delete('/{post}/like', 'PostsController@unlike')->name('unlike')->middleware('auth');
 });
 
+// コメント一覧
+Route::post('/posts/{post}/comments/create', 'CommentsController@store');
+Route::get('/posts/{post_id}/comments', 'CommentsController@show')->name('comments.show');
+
+// コメント削除機能
+Route::get('/comments/{comment_id}', 'CommentsController@destroy');
 
 //ユーザ編集画面
 Route::get('/users/edit', 'UsersController@edit');
